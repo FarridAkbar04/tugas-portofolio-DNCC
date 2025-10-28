@@ -1,24 +1,56 @@
-/* css/style.css */
-html {
-  scroll-behavior: smooth;
+// === Mobile Menu Toggle ===
+const menuBtn = document.getElementById('menu-btn');
+const menu = document.getElementById('menu');
+
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
 }
 
-/* reveal effect initial state */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-in-out;
+// === Scroll Reveal (Efek muncul saat discroll) ===
+const revealElements = document.querySelectorAll("[data-reveal]");
+
+const revealOnScroll = () => {
+  const windowHeight = window.innerHeight;
+
+  revealElements.forEach((el) => {
+    const position = el.getBoundingClientRect().top;
+    if (position < windowHeight - 100) {
+      el.classList.add("opacity-100", "translate-y-0");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+// === Dark Mode Toggle ===
+const darkToggle = document.getElementById('dark-toggle');
+const html = document.documentElement;
+
+if (localStorage.theme === 'dark') {
+  html.classList.add('dark');
+} else {
+  html.classList.remove('dark');
 }
 
-/* classes toggled by JS */
-.opacity-100 {
-  opacity: 1 !important;
-}
+if (darkToggle) {
+  darkToggle.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    if (html.classList.contains('dark')) {
+      localStorage.theme = 'dark';
+      darkToggle.textContent = '☀️';
+    } else {
+      localStorage.theme = 'light';
+      darkToggle.textContent = '🌙';
+    }
+  });
 
-.translate-y-0 {
-  transform: translateY(0) !important;
-}
-
-body {
-  transition: all 0.3s ease-in-out;
+  // Set ikon awal sesuai mode
+  if (html.classList.contains('dark')) {
+    darkToggle.textContent = '☀️';
+  } else {
+    darkToggle.textContent = '🌙';
+  }
 }

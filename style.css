@@ -1,29 +1,184 @@
-/ js/script.js // Mobile Menu Toggle
-const menuBtn=document.getElementById('menu-btn');
-const menu=document.getElementById('menu');
-
-if (menuBtn) {
-    menuBtn.addEventListener('click', ()=> {
-            menu.classList.toggle('hidden');
-        });
+/* ===== Smooth Scroll ===== */
+html {
+    scroll-behavior: smooth;
 }
 
-// Scroll Reveal (Efek muncul saat discroll)
-const revealElements=document.querySelectorAll("[data-reveal]");
-
-const revealOnScroll=()=> {
-    const windowHeight=window.innerHeight;
-
-    revealElements.forEach((el)=> {
-            const position=el.getBoundingClientRect().top;
-
-            if (position < windowHeight - 100) {
-                el.classList.add("opacity-100", "translate-y-0");
-            }
-        });
+/* ===== Reveal Effect Initial State ===== */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
 }
 
-;
+/* ===== Classes toggled by JS ===== */
+.opacity-100 {
+    opacity: 1 !important;
+}
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+.translate-y-0 {
+    transform: translateY(0) !important;
+}
+
+/* ===== Base Transition ===== */
+body {
+    transition: all 0.3s ease-in-out;
+}
+
+/* ===== Global Smooth Color Transition ===== */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== Dark Mode Base Colors ===== */
+html.dark body {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+html.dark header {
+    background-color: #1e293b;
+}
+
+html.dark .border {
+    border-color: #334155;
+}
+
+html.dark .bg-white {
+    background-color: #1e293b !important;
+}
+
+/* ===== Default Text Colors Fix ===== */
+html.dark .text-gray-600,
+html.dark .text-gray-700 {
+    color: #cbd5e1 !important;
+}
+
+/* ===== Smooth Transition for All Key Elements ===== */
+html,
+body,
+header,
+section,
+footer,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+button {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ===== Perbaikan Kontras Dark Mode agar Teks Lebih Jelas ===== */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark p,
+html.dark span,
+html.dark a {
+    color: #f1f5f9 !important;
+}
+
+html.dark .border h4,
+html.dark .border p {
+    color: #f8fafc !important;
+}
+
+html.dark #home h2 {
+    color: #ffffff !important;
+}
+
+html.dark #home p {
+    color: #e2e8f0 !important;
+}
+
+html.dark button:hover {
+    background-color: #334155 !important;
+}
+
+html.dark footer {
+    background-color: #0f172a;
+    color: #94a3b8 !important;
+    border-color: #1e293b;
+}
+
+/* Background dan warna teks di section #home saat dark mode */
+html.dark #home {
+    background-color: #1e293b;
+    /* warna gelap yang kontras */
+    color: #f1f5f9 !important;
+    /* abu terang hampir putih */
+}
+
+/* Judul utama di #home */
+html.dark #home h1,
+html.dark #home h2,
+html.dark #home h3,
+html.dark #home h4,
+html.dark #home h5,
+html.dark #home h6 {
+    color: #f8fafc !important;
+    /* warna terang untuk judul */
+}
+
+/* Paragraf di #home */
+html.dark #home p,
+html.dark #home span,
+html.dark #home a {
+    color: #e2e8f0 !important;
+    /* warna teks paragraf yang terang */
+}
+
+/* Jika ada tombol di #home */
+html.dark #home button {
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+}
+
+html.dark #home button:hover {
+    background-color: #475569 !important;
+}
+
+/* Background dan border kartu saat dark mode */
+html.dark .border {
+    background-color: #1e293b !important;
+    /* slate-800 */
+    border-color: #334155 !important;
+    /* slate-700 */
+}
+
+/* Warna teks utama dalam kartu */
+html.dark .border h1,
+html.dark .border h2,
+html.dark .border h3,
+html.dark .border h4,
+html.dark .border h5,
+html.dark .border h6,
+html.dark .border p,
+html.dark .border span,
+html.dark .border a,
+html.dark .border li,
+html.dark .border div,
+html.dark .border button {
+    color: #f8fafc !important;
+    /* abu terang hampir putih */
+}
+
+/* Jika ada tombol atau elemen interaktif di kartu */
+html.dark .border button:hover {
+    background-color: #334155 !important;
+    color: #f8fafc !important;
+}
+
+/* Jika ada link di dalam kartu */
+html.dark .border a:hover {
+    color: #e0e7ff !important;
+    /* sedikit lebih terang */
+    text-decoration: underline;
+}
