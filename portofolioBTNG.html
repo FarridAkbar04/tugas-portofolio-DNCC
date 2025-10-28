@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farid Akbar Safa’at | Portfolio</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-white text-black font-sans">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold tracking-wide">Farid Akbar Safa’at</h1>
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li><a href="#home" class="hover:text-black font-medium">Home</a></li>
+                <li><a href="#about" class="hover:text-black font-medium">About</a></li>
+                <li><a href="#portfolio" class="hover:text-black font-medium">Portfolio</a></li>
+                <li><a href="#contact" class="hover:text-black font-medium">Contact</a></li>
+            </ul>
+            <button class="md:hidden" id="menu-btn" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="menu" class="hidden md:hidden bg-white px-6 pb-4">
+            <a href="#home" class="block py-2">Home</a>
+            <a href="#about" class="block py-2">About</a>
+            <a href="#portfolio" class="block py-2">Portfolio</a>
+            <a href="#contact" class="block py-2">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gray-50"
+        data-aos="fade-up" data-reveal>
+        <img src="fotoTanjiro.webp" alt="Farid Akbar Safa’at" class="w-40 h-40 rounded-full shadow-lg mb-6">
+        <h2 class="text-4xl font-bold mb-2">Farid Akbar Safa’at</h2>
+        <p class="text-gray-600 mb-6">Mahasiswa Udinus Teknik Informatika | Web Developer Enthusiast</p>
+        <a href="#portfolio" class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-all">Lihat
+            Portofolio</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white" data-aos="fade-up" data-reveal>
+        <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+            <div class="flex-1">
+                <img src="fotoTanjiro1.webp" alt="Farid Akbar Safa’at"
+                    class="rounded-2xl shadow-md w-60 h-60 object-cover mx-auto md:mx-0">
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="text-3xl font-semibold mb-4">Tentang Saya</h3>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Halo! Saya <span class="font-semibold">Farid Akbar Safa’at</span>, seorang mahasiswa IT yang
+                    tertarik pada dunia pengembangan web dan teknologi. Saya senang mempelajari hal baru,
+                    terutama yang berkaitan dengan front-end development, desain antarmuka, dan logika pemrograman.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Tujuan saya adalah membuat website ini untuk memenuhi tugas akhir saya dalam pelatihan BTNG yang diadakan oleh DNCC
+                    dan saya juga sangat senang karena adanya pelatihan ini skill saya bisa dapat ter-upgrade dari yang sebelumnya.
+                </p>
+                <a href="#contact"
+                    class="inline-block mt-6 bg-black text-white px-5 py-2 rounded-full hover:bg-gray-800 transition-all">Hubungi
+                    Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50" data-aos="fade-up" data-reveal>
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold mb-10">Portofolio</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Card -->
+                <div class="border rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="assets/projects/project1.jpg" class="rounded-t-xl" alt="Project 1">
+                    <div class="p-4">
+                        <h4 class="font-bold">Project 1</h4>
+                        <p class="text-gray-600 text-sm">Deskripsi singkat project 1.</p>
+                    </div>
+                </div>
+                <div class="border rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="assets/projects/project2.jpg" class="rounded-t-xl" alt="Project 2">
+                    <div class="p-4">
+                        <h4 class="font-bold">Project 2</h4>
+                        <p class="text-gray-600 text-sm">Deskripsi singkat project 2.</p>
+                    </div>
+                </div>
+                <div class="border rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="assets/projects/project3.jpg" class="rounded-t-xl" alt="Project 3">
+                    <div class="p-4">
+                        <h4 class="font-bold">Project 3</h4>
+                        <p class="text-gray-600 text-sm">Deskripsi singkat project 3.</p>
+                    </div>
+                </div>
+                <div class="border rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="assets/projects/project4.jpg" class="rounded-t-xl" alt="Project 4">
+                    <div class="p-4">
+                        <h4 class="font-bold">Project 4</h4>
+                        <p class="text-gray-600 text-sm">Deskripsi singkat project 4.</p>
+                    </div>
+                </div>
+                <div class="border rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+                    <img src="assets/projects/project5.jpg" class="rounded-t-xl" alt="Project 5">
+                    <div class="p-4">
+                        <h4 class="font-bold">Project 5</h4>
+                        <p class="text-gray-600 text-sm">Deskripsi singkat project 5.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white" data-aos="fade-up" data-reveal>
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-3xl font-semibold mb-8">Hubungi Saya</h3>
+            <form class="space-y-4 max-w-lg mx-auto">
+                <input type="text" placeholder="Nama" class="w-full border rounded-lg px-4 py-2">
+                <input type="email" placeholder="Email" class="w-full border rounded-lg px-4 py-2">
+                <textarea placeholder="Pesan" rows="4" class="w-full border rounded-lg px-4 py-2"></textarea>
+                <button type="submit"
+                    class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-all">Kirim
+                    Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 text-sm border-t">
+        © 2025 Farid Akbar Safa’at. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 900, once: true });
+    </script>
+</body>
+
+</html>
