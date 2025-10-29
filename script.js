@@ -1,4 +1,4 @@
-// === Mobile Menu Toggle ===
+//Mobile Menu Toogle
 const menuBtn = document.getElementById('menu-btn');
 const menu = document.getElementById('menu');
 
@@ -8,7 +8,7 @@ if (menuBtn) {
   });
 }
 
-// === Scroll Reveal (Efek muncul saat discroll) ===
+//Scroll Reveal
 const revealElements = document.querySelectorAll("[data-reveal]");
 
 const revealOnScroll = () => {
@@ -25,7 +25,7 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
-// === Dark Mode Toggle ===
+//Dark Mode Toogle
 const darkToggle = document.getElementById('dark-toggle');
 const html = document.documentElement;
 
@@ -47,7 +47,7 @@ if (darkToggle) {
     }
   });
 
-  // Set ikon awal sesuai mode
+  //Set ikon awal sesuai mode
   if (html.classList.contains('dark')) {
     darkToggle.textContent = '☀️';
   } else {
